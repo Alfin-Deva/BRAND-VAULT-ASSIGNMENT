@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-12">
+        <div class="row justify-content-center align-items-center pt-5">
+            <h3>Users List</h3>
+        </div>
+        <div class="col-md-1 offset-md-11">
+            <button class="btn btn-primary" (click)="addUser()">Add</button>
+        </div>
+<table class="table table-bordered mt-3">
+    <thead class="bgColor">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Password</th>
+            <th>Confirm Password</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Image</th>
+            <th>Edit</th>
+
+        </tr>
+    </thead>
+    <tbody *ngIf="listData.length>0">
+        <tr *ngFor="let item of listData">
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.password}}</td>
+            <td>{{item.confirmPassword}}</td>
+            <td>{{item.emailID}}</td>
+            <td>{{item.dob}}</td>
+            <td><img [src]="item.profilePicture" alt="No Image" width="50" height="50"></td>
+            <td><i class="fa fa-pencil" (click)="editUser(item)"></i></td>
+
+        </tr>  
+    </tbody>
+</table>
+</div>
+</div>
